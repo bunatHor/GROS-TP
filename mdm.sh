@@ -19,5 +19,5 @@ do
 	fi
 done
 
-ssh machine@1234 'bash -s' < core.sh 
+ssh machine@1234 './core.sh arg1'  
 ssh machine@1.2.3.4 core.sh remove $1 $2
