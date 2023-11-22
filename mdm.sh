@@ -2,22 +2,37 @@
 
 for arg in $@
 do
-	if [[ $arg =~ ^remove (.+) (.+) ]]
+	if ! [[ $arg =~ ^[^:]+$ ]]
 	then
-	 	echo "remove:\1:\2" 
-
-  	elif [[ $arg =~ ^add (.+) (.+) ]]
-        then
-
-  	elif [[ $arg =~ ^list (.+) (.+) ]]
-        then
-
-	elif [[ $arg =~ ^change (.+) (.+) ]]
-        then
-
-
+		echo "pas de : dans les noms !!"
+		exit
 	fi
 done
 
-ssh machine@1234 './core.sh arg1'  
-ssh machine@1.2.3.4 core.sh remove $1 $2
+if ! [[ $1 =~ (add|remove|list|change) ]]
+then
+	echo "nimp"
+	exit
+fi	
+
+if [[ $1 =~ add ]]
+then
+	echo $3
+	if ! [[ $3 =~ ^[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}$ ]]
+	then
+		echo "addresse ip invalide"
+		exit
+	fi
+fi
+
+if [[ $1 =~ change ]]
+then
+	if ! [[ $4 =~ (--name|group) ]]
+	then
+		echo "modification possible : --name ou --group"
+		exit
+	fi
+fi
+
+###### IL FAUDRA CHANGER LE NOM ET L'IP DE NOTRE MACHINE
+ssh ssh@localhost ./core.sh $1 $2 $3 $4 $5
