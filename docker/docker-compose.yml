@@ -1,0 +1,24 @@
+services:
+  nginx:
+    build: ./nginx
+    image: nginx
+    networks:
+      my_net:
+        ipv4_address: 1.2.3.2
+    ports:
+      - "80:80"
+      - "443:443"  
+    volumes:
+      - vol:/var/www/html/
+
+
+volumes:
+  vol:
+
+networks:
+  my_net:
+    ipam:
+      driver: default
+      config:
+        - subnet: 1.2.3.0/24
+          gateway: 1.2.3.1

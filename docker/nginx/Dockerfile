@@ -12,7 +12,7 @@ RUN openssl req -x509 -newkey rsa:4096 -keyout /etc/ssl/https.vdm.fr.key -out /e
 
 
 
-COPY volume/nginx.conf /etc/nginx/nginx.conf
+COPY nginx.conf /etc/nginx/nginx.conf
 
 
 
