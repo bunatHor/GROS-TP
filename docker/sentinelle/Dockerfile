@@ -6,4 +6,4 @@ RUN touch doss/BDD/bdd.csv
 COPY make_index.sh /doss
 COPY sentinelle.sh /doss
 
-CMD ["bash","sentinelle.sh"]
+CMD ["bash","doss/sentinelle.sh"]

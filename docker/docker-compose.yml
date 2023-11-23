@@ -12,6 +12,18 @@ services:
       - vol:/var/www/html/
 
 
+services:
+  sshd:
+    build: ./sshd
+    image: sshd
+    networks:
+      my_net:
+        ipv4_address: 1.2.3.3
+    volumes:
+      - vol:/home/tplover
+
+
+
 volumes:
   vol:
 

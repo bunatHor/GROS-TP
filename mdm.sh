@@ -35,4 +35,4 @@ then
 fi
 
 ###### IL FAUDRA CHANGER LE NOM ET L'IP DE NOTRE MACHINE
-ssh ssh@localhost ./core.sh $1 $2 $3 $4 $5
+ssh tplover@1.2.3.3 ./core.sh $1 $2 $3 $4 $5
