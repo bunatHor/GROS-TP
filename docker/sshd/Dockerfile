@@ -22,7 +22,8 @@ RUN chown tplover: /home/tplover/.ssh/ -R
 
 # On recup le core script et le copie dans le conteneur
 #USER root
-#COPY core.sh /chemin/vers/core.sh
+COPY core.sh /home/tplover/
+COPY ping_ip.sh /home/tplover/
 
 # Definit l'entry point 
 ##(can write -D ou --nodaemon)
