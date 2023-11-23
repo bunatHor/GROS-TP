@@ -28,6 +28,6 @@ then
 
 elif [ $1 = list ]
 then
-	grep -E ":$2$" $bdd |cut -d":" -f1,2 |sed "s/:/ | /g"
+	grep -E ":$2$" $bdd |cut -d":" -f1,2,3 |sed "s/:/ | /g"
 fi
 
