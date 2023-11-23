@@ -9,8 +9,7 @@ services:
       - "80:80"
       - "443:443"  
     volumes:
-      - vol:/var/www/html/
-
+      - results:/results
 
   sshd:
     build: ./sshd
@@ -19,7 +18,7 @@ services:
       my_net:
         ipv4_address: 1.2.3.3
     volumes:
-      - vol:/home/tplover
+      - lecture:/lecture
 
   sentinelle:
     build: ./sentinelle
@@ -28,12 +27,14 @@ services:
       my_net:
         ipv4_address: 1.2.3.4
     volumes:
-      - vol:/doss
+      - results:/results
+      - lecture:/lecture
 
 
 
 volumes:
-  vol:
+  results:
+  lecture:
 
 networks:
   my_net:

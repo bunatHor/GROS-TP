@@ -4,7 +4,7 @@
 ######## SENTINELLE.SH ############
 ###################################
 
-dos=/doss/BDD
+dos=/lecture
 
 ############### BOUCLE INFINIE #########################
 
@@ -38,7 +38,7 @@ then
 	if ! [ -z $modif_file ]
 	then
 
-	bash /doss/make_index.sh
+	bash /make_index.sh
 
 	fi
 fi

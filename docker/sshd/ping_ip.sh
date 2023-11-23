@@ -4,7 +4,7 @@
 ########## PING_IP.SH #############
 ###################################
 
-file=BDD/bdd.csv
+file=/lecture/bdd.csv
 
 while [ a = a ]
 
@@ -36,7 +36,7 @@ fi
 
 echo "Fichier Temporaire"
 echo ""
-cat bdd.tmp
+#cat bdd.tmp
 
 rm line.tmp
 
@@ -50,7 +50,7 @@ fi
 echo ""
 echo "Fichier final"
 echo ""
-cat $file
+#cat $file
 
 sleep 20
 

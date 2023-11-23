@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-bdd=BDD/bdd.csv
+bdd=/lecture/bdd.csv
 
 if [ $1 = add ]
 then
