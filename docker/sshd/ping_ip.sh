@@ -4,11 +4,14 @@
 ########## PING_IP.SH #############
 ###################################
 
+#su tplover
+
 file=/lecture/bdd.csv
 
 while [ a = a ]
-
 do
+	chmod 766 $file
+
 	total=$(wc -l $file |cut -d" " -f1)
 
 if [ -f bdd.tmp ]
@@ -55,3 +58,4 @@ echo ""
 sleep 20
 
 done
+

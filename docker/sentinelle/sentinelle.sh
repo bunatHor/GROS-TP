@@ -39,9 +39,20 @@ then
 	then
 
 	bash /make_index.sh
-
 	fi
 fi
+
+all_grp=$(cut -d":" -f4 /lecture/bdd.csv |sort -u)
+res_grp=$(ls /results/index/)
+
+for i in $res_grp
+do
+	echo $all_grp |grep -E "(^| )$i( |$)"
+	if [ $? -eq 1 ]
+	then
+		rm -r /results/index/$i
+	fi
+done
 
 done
 

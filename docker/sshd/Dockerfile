@@ -6,7 +6,7 @@ RUN pacman -Sy openssh diffutils --noconfirm
 
 # ON ajoute un user pour la connexion ssh
 
-RUN useradd -m tplover
+RUN useradd -m tplover -u 1000
 
 # On fait la config de SSH et recup les keys
 #USER tplover
@@ -17,6 +17,7 @@ RUN mkdir /home/tplover/.ssh/
 
 RUN mkdir /lecture
 RUN chown tplover: /lecture
+RUN chmod -R 775 /lecture
 
 COPY id_rsa.pub /home/tplover/.ssh/authorized_keys
 RUN chmod 544 /home/tplover/.ssh/authorized_keys
