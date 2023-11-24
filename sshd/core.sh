@@ -16,6 +16,7 @@ then
 		exit
 	else
 		sed -i "/^$2.*$3$/d" $bdd
+		echo "$2 removed from group $3"
 	fi	
 	
 

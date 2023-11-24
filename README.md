@@ -1,7 +1,11 @@
-coucou, on est les meilleurs ! (et sans appeler loup une seule fois)
+Coucou, on est les meilleurs ! (et sans appeler Loup une seule fois)
 
 UTILISATION DE NOTRE GROS-TP
 
+
+ETAPE 0:
+
+S'assurer que nginx/apache ou tout service utilisant les ports 80 et 443 soient désactivés.
 
 
 ETAPE 1:
@@ -9,8 +13,6 @@ ETAPE 1:
 Créer puis copier sa clef publique ssh dans GROS-TP :
 
 cp ~/.ssh/id_rsa.pub sshd/id_rsa.pub
-
-
 
 ETAPE 2:
 
@@ -24,7 +26,7 @@ bash mdm.sh --help		  # pour avoir les infos
 
 ETAPE 4:
 
-rentrez l'addresse suivante sur votre navigateur :
+Rentrer l'addresse suivante sur votre navigateur :
 
 https://1.2.3.2
 
@@ -40,3 +42,10 @@ ADMIREZ NOTRE TRAVAIL
 
 
 
+-------
+
+Si une erreur de type " ATTENTION : MAN IN THE MIDDLE ATTACK " apparait.
+
+Supprimer known_hosts dans votre dossier .ssh de votre répertoire personnel :
+
+rm ~/.ssh/known_hosts

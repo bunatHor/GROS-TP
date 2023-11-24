@@ -56,7 +56,7 @@ fi
 
 if [[ $1 =~ change ]]
 then
-	if ! [[ $4 =~ (--name|group) ]]
+	if ! [[ $4 =~ ^(--name|--group)$ ]]
 	then
 		echo "modification possible : --name ou --group"
 		exit
