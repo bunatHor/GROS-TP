@@ -9,20 +9,20 @@ then
 
 elif [ $1 = remove ]
 then
-	grep -E "^$2.*$3$" $bdd &> /dev/null
+	grep -E "^$2\:.*\:$3$" $bdd &> /dev/null
 	if ! [ $? -eq 0 ] 
 	then
 		echo "ce duo utilisateur/groupe n'existe pas"
 		exit
 	else
-		sed -i "/^$2.*$3$/d" $bdd
+		sed -i "/^$2\:.*\:$3$/d" $bdd
 		echo "$2 removed from group $3"
 	fi	
 	
 
 elif [ $1 = change ]
 then
-	grep -E "^$2.*$3$" $bdd &> /dev/null
+	grep -E "^$2\:.*\:$3$" $bdd &> /dev/null
         if ! [ $? -eq 0 ] 
         then
                 echo "ce duo utilisateur/groupe n'existe pas"

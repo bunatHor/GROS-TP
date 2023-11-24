@@ -13,10 +13,10 @@ do
 
 	total=$(wc -l $file |cut -d" " -f1)
 
-if [ -f bdd.tmp ]
-then
-	rm bdd.tmp
-fi
+	#if [ -f bdd.tmp ]
+	#then
+	rm bdd.tmp &> /dev/null
+	#fi
 
 	for i in $(seq $total)
 	do
@@ -44,7 +44,7 @@ diff bdd.tmp $file &> /dev/null
 
 if [ $? -eq 1 ]
 then
-	mv bdd.tmp $file
+	cp bdd.tmp $file
 fi
 
 sleep 20
