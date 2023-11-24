@@ -11,17 +11,19 @@ done
 
 if ! [[ $1 =~ (add|remove|list|change) ]]
 then
-	echo "nimp"
+	echo "commandes disponibles: add|remove|list|change"
 	exit
 fi	
 
 if [[ $1 =~ add ]]
 then
-	echo $3
+	
 	if ! [[ $3 =~ ^[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}$ ]]
 	then
 		echo "addresse ip invalide"
 		exit
+	else
+		echo "$2 $3 added in group $4"
 	fi
 fi
 

@@ -4,7 +4,6 @@
 ########## PING_IP.SH #############
 ###################################
 
-#su tplover
 
 file=/lecture/bdd.csv
 
@@ -37,9 +36,6 @@ fi
 		fi
 	done
 
-echo "Fichier Temporaire"
-echo ""
-#cat bdd.tmp
 
 rm line.tmp
 
@@ -50,10 +46,6 @@ if [ $? -eq 1 ]
 then
 	mv bdd.tmp $file
 fi
-echo ""
-echo "Fichier final"
-echo ""
-#cat $file
 
 sleep 20
 
